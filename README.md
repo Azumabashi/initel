@@ -1,2 +1,2 @@
 # initel
-init.el
+Azumabashi's `init.el` (configutation file of Emacs).
