@@ -126,6 +126,12 @@
 	 ("C-<" . mc/mark-previous-like-this)
 	 ("C-c C-<" . mc/mark-all-like-this)))
 
+;; company
+(leaf company
+  :ensure t
+  :config
+  (global-company-mode))
+
 ;; delete by C-h
 (keyboard-translate ?\C-h ?\C-?)
 (global-set-key (kbd "C-?") 'help-for-help)
