@@ -56,8 +56,10 @@
 ;; show indent guide
 (leaf indent-guide
   :ensure t
+  :custom ((indent-guide-char . " "))
   :config
-  (indent-guide-global-mode))
+  (indent-guide-global-mode)
+  (set-face-background 'indent-guide-face "dimgray"))
 
 ;; skk
 (leaf skk
