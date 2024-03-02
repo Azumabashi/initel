@@ -183,11 +183,9 @@
     (region-replace "．" "。" begin end)
     (goto-char curpos)))
 
-;; use HackGen
-(create-fontset-from-ascii-font "HackGen-13" nil "HackGen")
-(set-fontset-font "fontset-HackGen" 'unicode "HackGen-13" nil 'append)
-(set-fontset-font "fontset-HackGen" 'unicode "HackGen-18" nil 'append)
-(add-to-list 'default-frame-alist '(font . "fontset-HackGen"))
+;; font specification:
+;; Use Options -> Set Default Font
+;; The configuration will be on ~/.emacs.d/custom-set-variables.el.
 
 ;; enable turning back the lines in org-mode
 (setq org-startup-truncated nil)
