@@ -189,6 +189,8 @@
 (set-fontset-font "fontset-HackGen" 'unicode "HackGen-18" nil 'append)
 (add-to-list 'default-frame-alist '(font . "fontset-HackGen"))
 
+;; enable turning back the lines in org-mode
+(setq org-startup-truncated nil)
 
 ; create custom-set-variables to another file
 (setq custom-file "~/.emacs.d/custom-set-variables.el")
