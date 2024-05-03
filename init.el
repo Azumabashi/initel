@@ -25,7 +25,7 @@
 (provide 'init)
 
 ;; use settings from shell
-(exec-path-from-shell-initialize)
+;(exec-path-from-shell-initialize)
 
 ; show line numbers
 (global-display-line-numbers-mode)
@@ -85,6 +85,10 @@
   (migemo-init)
   )
 
+;; lsp-mode
+(leaf lsp-mode
+  :ensure t)
+
 ;; yatex
 (leaf yatex
   :ensure t
@@ -101,7 +105,9 @@
 ;; nim
 (leaf nim-mode
   :ensure t
-  :mode ("\\.nim" "\\.nims"))
+  :mode ("\\.nim" "\\.nims")
+  :hook
+  (nim-mode . lsp))
 
 ;; ivy
 (leaf ivy
@@ -189,6 +195,10 @@
 
 ;; enable turning back the lines in org-mode
 (setq org-startup-truncated nil)
+
+;; LaTeX preview quality
+(setq org-latex-create-formula-image-program 'dvisvgm)
+(plist-put org-format-latex-options :scale 1.5)
 
 ; create custom-set-variables to another file
 (setq custom-file "~/.emacs.d/custom-set-variables.el")
