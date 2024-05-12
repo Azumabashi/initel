@@ -140,6 +140,17 @@
   :config
   (global-company-mode))
 
+;; org-mode
+(leaf org
+  :ensure t
+  :config
+  (org-babel-do-load-languages
+  'org-babel-load-languages
+  '((emacs-lisp . t) (org . t) (nim . t))))
+
+;; do not ask evaluation confirm
+(setq org-confirm-babel-evaluate nil)
+
 ;; delete by C-h
 (keyboard-translate ?\C-h ?\C-?)
 (global-set-key (kbd "C-?") 'help-for-help)
