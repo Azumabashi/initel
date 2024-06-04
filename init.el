@@ -155,7 +155,19 @@
   (setq lst-keymap-prefix "C-c l")
   :hook
   (nim-mode . lsp)
+  (text-mode . lsp)
   :commands lsp)
+
+;; grammarly
+(leaf grammarly
+  :ensure t)
+
+;; lsp-grammarly
+(leaf lsp-grammarly
+  :ensure t
+  :hook (text-mode . (lambda ()
+		       (require 'lsp-grammarly)
+		       (lsp))))
 
 ;; do not ask evaluation confirm
 (setq org-confirm-babel-evaluate nil)
