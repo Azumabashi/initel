@@ -187,6 +187,12 @@
   :ensure t
   :mode ("\\.gp" "\\.plt"))
 
+;; magit
+(leaf magit
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x g") 'magit-status))
+
 ;; do not ask evaluation confirm
 (setq org-confirm-babel-evaluate nil)
 
