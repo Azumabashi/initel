@@ -245,6 +245,9 @@
 (setq org-latex-create-formula-image-program 'dvisvgm)
 (plist-put org-format-latex-options :scale 1.5)
 
+;; change directory for temporary files
+(setq backup-directory-alist '((".*" . "~/.emacs-tmp")))
+
 ; create custom-set-variables to another file
 (setq custom-file "~/.emacs.d/custom-set-variables.el")
 (load custom-file)
