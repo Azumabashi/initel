@@ -158,6 +158,12 @@
   (text-mode . lsp)
   :commands lsp)
 
+;; lsp-ui
+(leaf lsp-ui
+  :ensure t
+  :config
+  (setq lsp-ui-peek-enable t))
+
 ;; grammarly
 (leaf grammarly
   :ensure t)
