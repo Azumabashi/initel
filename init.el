@@ -193,6 +193,12 @@
   :config
   (global-set-key (kbd "C-x g") 'magit-status))
 
+;; multi-term
+(leaf multi-term
+  :ensure t
+  :config
+  (setq multi-term-program shell-file-name))
+
 ;; do not ask evaluation confirm
 (setq org-confirm-babel-evaluate nil)
 
