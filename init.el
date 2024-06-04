@@ -163,6 +163,13 @@
   :ensure t
   :config
   (setq lsp-ui-peek-enable t))
+;; wrappers
+(defun goto-definition-lsp-ui()
+  (interactive)
+  (lsp-ui-peek-find-definitions))
+(defun goto-references-lsp-ui()
+  (interactive)
+  (lsp-ui-peek-find-references))
 
 ;; grammarly
 (leaf grammarly
