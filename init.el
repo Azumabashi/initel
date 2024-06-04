@@ -182,6 +182,11 @@
 		       (require 'lsp-grammarly)
 		       (lsp))))
 
+;; gnuplot
+(leaf gnuplot
+  :ensure t
+  :mode ("\\.gp" "\\.plt"))
+
 ;; do not ask evaluation confirm
 (setq org-confirm-babel-evaluate nil)
 
