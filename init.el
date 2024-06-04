@@ -148,6 +148,15 @@
   'org-babel-load-languages
   '((emacs-lisp . t) (org . t) (nim . t))))
 
+;; lsp
+(leaf lsp-mode
+  :ensure t
+  :init
+  (setq lst-keymap-prefix "C-c l")
+  :hook
+  (nim-mode . lsp)
+  :commands lsp)
+
 ;; do not ask evaluation confirm
 (setq org-confirm-babel-evaluate nil)
 
