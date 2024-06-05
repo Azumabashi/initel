@@ -162,7 +162,9 @@
 (leaf lsp-ui
   :ensure t
   :config
-  (setq lsp-ui-peek-enable t))
+  (setq lsp-ui-peek-enable t)
+  (setq lsp-ui-doc-enable t)
+  (setq lsp-ui-doc-include-signature t))
 ;; wrappers
 (defun goto-definition-lsp-ui()
   (interactive)
