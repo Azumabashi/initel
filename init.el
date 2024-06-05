@@ -47,6 +47,12 @@
   (doom-themes-treemacs-config)
   (doom-themes-org-config))
 
+;; doom-modeline
+;; if the icons are strange, do M-x nerd-icons-install-fonts
+(leaf doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
 ;; add corresponding parentheses
 (leaf smartparens
   :ensure t
