@@ -153,9 +153,9 @@
   :ensure t
   :init
   (setq lsp-keymap-prefix "C-c l")
-  :hook
-  (nim-mode . lsp)
-  (text-mode . lsp)
+  :hook (
+   (nim-mode . lsp)
+   (text-mode . lsp))
   :commands lsp)
 
 ;; lsp-ui
