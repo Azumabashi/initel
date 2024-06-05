@@ -152,7 +152,7 @@
 (leaf lsp-mode
   :ensure t
   :init
-  (setq lst-keymap-prefix "C-c l")
+  (setq lsp-keymap-prefix "C-c l")
   :hook
   (nim-mode . lsp)
   (text-mode . lsp)
