@@ -164,10 +164,7 @@
   :config
   (setq lsp-ui-peek-enable t)
   (setq lsp-ui-doc-enable t)
-  (setq lsp-ui-doc-include-signature t)
-  ;; show docs by cursor, not mouse
-  (setq lsp-ui-doc-show-with-cursor t)
-  (setq lsp-ui-doc-show-with-mouse nil))
+  (setq lsp-ui-doc-include-signature t))
 ;; wrappers
 (defun goto-definition-lsp-ui()
   (interactive)
@@ -175,6 +172,16 @@
 (defun goto-references-lsp-ui()
   (interactive)
   (lsp-ui-peek-find-references))
+(defun show-doc-with-cursor()
+  (interactive)
+  (setq lsp-ui-doc-show-with-cursor t)
+  (setq lsp-ui-doc-show-with-mouse nil))
+(defun show-doc-with-mouse()
+  (interactive)
+  (setq lsp-ui-doc-show-with-cursor nil)
+  (setq lsp-ui-doc-show-with-mouse t))
+;; by default
+(show-doc-with-mouse) 
 
 ;; grammarly
 (leaf grammarly
