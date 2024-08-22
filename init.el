@@ -152,7 +152,9 @@
   :config
   (org-babel-do-load-languages
   'org-babel-load-languages
-  '((emacs-lisp . t) (org . t) (nim . t))))
+  '((emacs-lisp . t) (org . t) (nim . t)))
+  ;; org-agenda
+  (org-agenda-files '("~/org-todo")))
 
 ;; lsp
 (leaf lsp-mode
