@@ -217,12 +217,9 @@
   :config
   (setq multi-term-program shell-file-name))
 
-;; pomidor (pomodoro timer)
-(leaf pomidor)
-;; wrapper
-(defun pomodoro-timer()
-  (interactive)
-  (pomidor))
+;; org-pomodoro
+(leaf org-pomodoro
+  :ensure t)
 
 ;; do not ask evaluation confirm
 (setq org-confirm-babel-evaluate nil)
