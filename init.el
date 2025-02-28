@@ -224,6 +224,12 @@
 (leaf org-pomodoro
   :ensure t)
 
+;; send notification to OS
+(leaf alert
+  :ensure t
+  :config
+  (setq alert-default-style 'notifier))
+
 ;; do not ask evaluation confirm
 (setq org-confirm-babel-evaluate nil)
 
