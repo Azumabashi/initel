@@ -36,6 +36,9 @@
 ; enhance corresponding parentheses
 (show-paren-mode 1)
 
+;; set Japanese as the default language
+(set-language-environment "Japanese")
+
 (leaf doom-themes
   :ensure t
   :custom ((doom-themes-enable-bold . t)
