@@ -99,6 +99,7 @@
 (leaf yatex
   :ensure t
   :mode "\\.tex"
+  :hook (yatex-mode . display-line-numbers-mode)
   :custom ((tex-command . "lualatex")
 	   (bibtex-command . "biber --bblencoding=utf8 -u -U --output_safechars'")
 	   (tex-pdfview-command . "open -a Skim")))
