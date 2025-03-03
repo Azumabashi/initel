@@ -224,8 +224,11 @@
   (setq multi-term-program shell-file-name))
 
 ;; org-pomodoro
+;; disable playing sounds until better sounds are found...
 (leaf org-pomodoro
-  :ensure t)
+  :ensure t
+  :config
+  (setq org-pomodoro-play-sounds nil))
 
 ;; send notification to OS
 (leaf alert
