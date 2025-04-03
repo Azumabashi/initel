@@ -27,9 +27,6 @@
 ;; use settings from shell
 ;(exec-path-from-shell-initialize)
 
-; show line numbers
-(global-display-line-numbers-mode)
-
 ; hide tool bar and menu bar
 (tool-bar-mode 0)
 
@@ -102,10 +99,11 @@
 (leaf yatex
   :ensure t
   :mode "\\.tex"
-  :hook (yatex-mode . display-line-numbers-mode)
   :custom ((tex-command . "lualatex")
 	   (bibtex-command . "biber --bblencoding=utf8 -u -U --output_safechars'")
 	   (tex-pdfview-command . "open -a Skim")))
+(setq yatex-mode-hook
+  '(lambda () (display-line-numbers-mode t)))
 
 ;; python
 (leaf python-mode
@@ -305,3 +303,6 @@
 ; create custom-set-variables to another file
 (setq custom-file "~/.emacs.d/custom-set-variables.el")
 (load custom-file)
+
+; show line numbers
+(global-display-line-numbers-mode 1)
