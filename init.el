@@ -25,7 +25,9 @@
 (provide 'init)
 
 ;; use settings from shell
-;(exec-path-from-shell-initialize)
+(leaf exec-path-from-shell
+  :ensure t
+  :init (exec-path-from-shell-initialize))
 
 ; hide tool bar and menu bar
 (tool-bar-mode 0)
