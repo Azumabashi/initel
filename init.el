@@ -97,13 +97,20 @@
 (leaf lsp-mode
   :ensure t)
 
+;; lsp-ui-peek
+(leaf lsp-ui
+  :ensure t
+  :custom
+  (lsp-ui-peek-fontify . 'always))
+
 ;; yatex
 (leaf yatex
   :ensure t
   :mode "\\.tex"
   :custom ((tex-command . "lualatex")
 	   (bibtex-command . "biber --bblencoding=utf8 -u -U --output_safechars'")
-	   (tex-pdfview-command . "open -a Skim")))
+	   (tex-pdfview-command . "open -a Skim"))
+  :hook (yatex-mode . flyspell-mode))
 (setq yatex-mode-hook
   '(lambda () (display-line-numbers-mode t)))
 
@@ -117,7 +124,8 @@
   :ensure t
   :mode ("\\.nim" "\\.nims")
   :hook
-  (nim-mode . lsp))
+  (nim-mode . lsp)
+  (nim-mode . lsp-ui))
 
 ;; ivy
 (leaf ivy
@@ -235,6 +243,25 @@
   :ensure t
   :config
   (setq alert-default-style 'notifier))
+
+;; grammar checker with LanguageTool
+(setq langtool-language-tool-jar "~/LanguageTool-6.6/languagetool-commandline.jar")
+(leaf langtool
+  :ensure t)
+
+;; spell checker
+(leaf flyspell
+  :ensure t
+  :hook ((yatex-mode . flyspell-mode)
+	 (nim-mode . flyspell-mode)))
+
+;; typst
+(leaf typst-ts-mode
+  :el-get (typst-ts-mode :type git :url "https://git.sr.ht/~meow_king/typst-ts-mode")
+  :mode "\\.typ"
+  :custom
+  (typst-ts-mode-enable-raw-blocks-highlight . t))
+
 
 ;; do not ask evaluation confirm
 (setq org-confirm-babel-evaluate nil)
